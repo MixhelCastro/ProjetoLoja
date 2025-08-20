@@ -34,6 +34,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// ESTA LINHA É CRUCIAL E DEVE VIR ANTES DE app.UseAuthorization() ou app.MapControllerRoute() <<<
+app.UseSession();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
