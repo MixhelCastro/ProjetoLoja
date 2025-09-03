@@ -1,12 +1,18 @@
 -- criando banco de dados
+-- drop database EcomLoja;
 create database EcomLoja;
+
 -- usanado EcomLoja
+
 use EcomLoja;
+
 -- criando tabelas
-create table Produtos (
+
+create table Produtos(
 id int primary key auto_increment,
 Nome varchar(40),
 Preco decimal(10.2),
+Descricao varchar(100),
 ImageUrl varchar(255),
 Estoque int
 );
@@ -34,3 +40,6 @@ PrecoUnitario decimal(10,2)
 select * from produtos;
 select * from pedido;
 select * from itemPedido;
+
+insert into Produtos(Nome,Descricao,Preco,ImageUrl,Estoque)values('Jogo1','Descricao Jogo-1',150.00, 'images/jogo1.jpg',10);
+insert into Produtos(Nome,Descricao,Preco,ImageUrl,Estoque)values('RRR','Roleta russa, remix',550.00, 'images/jogo2.jpg',100);
