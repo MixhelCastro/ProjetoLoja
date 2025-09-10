@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoLoja.Models;
-using ProjetoLoja.Repositorios;
+using ProjetoLoja.Repositorio;
 using System.Diagnostics;
 
 namespace ProjetoLoja.Controllers

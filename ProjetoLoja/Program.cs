@@ -1,4 +1,4 @@
-using ProjetoLoja.Repositorios;
+using ProjetoLoja.Repositorio;
 
 var builder = WebApplication.CreateBuilder(args);
 
