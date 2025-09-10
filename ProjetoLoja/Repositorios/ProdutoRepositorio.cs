@@ -2,23 +2,35 @@
 using MySql.Data.MySqlClient;
 using ProjetoLoja.Models;
 
-namespace ProjetoLoja.Repositorios
+
+namespace ProjetoLoja.Repositorio
 {
     public class ProdutoRepositorio
     {
-        // DECLARANDO STRING DE CONEXÃO 
         private readonly string _connectionString;
-     
+
         public ProdutoRepositorio(string connectionString)
         {
             _connectionString = connectionString;
         }
+
         public async Task<IEnumerable<Produto>> TodosProdutos()
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT Id, Nome, Descricao, Preco, ImageUrl, Estoque FROM Produtos";
+            var sql = "SELECT Id, Nome, Descricao, Preco, ImageUrl, Estoque FROM produtos";
             return await connection.QueryAsync<Produto>(sql);
-            // ORM, mapeamento relacional de banco de dados
         }
+
+
+        public async Task<Produto?> ProdutosPorId(int id)
+        {
+            using var connection = new MySqlConnection(_connectionString);
+            var sql = "SELECT Id, Nome, Descricao, Preco, ImageUrl, Estoque FROM produtos WHERE Id = @Id";
+            return await connection.QueryFirstOrDefaultAsync<Produto>(sql, new { Id = id });
+        }
+
+
     }
+
+
 }
