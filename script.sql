@@ -8,7 +8,7 @@ use EcomLoja;
 
 -- criando tabelas
 
-create table Produtos(
+create table Produto(
 id int primary key auto_increment,
 Nome varchar(40),
 Preco decimal(10.2),
@@ -37,9 +37,9 @@ PrecoUnitario decimal(10,2)
 
 -- CONSULTANDO AS TABELAS DO BANCO
 
-select * from produtos;
+select * from produto;
 select * from pedido;
 select * from itemPedido;
 
-insert into Produtos(Nome,Descricao,Preco,ImageUrl,Estoque)values('Jogo1','Descricao Jogo-1',150.00, 'images/jogo1.jpg',10);
-insert into Produtos(Nome,Descricao,Preco,ImageUrl,Estoque)values('RRR','Roleta russa, remix',550.00, 'images/jogo2.jpg',100);
+insert into Produto(Nome,Descricao,Preco,ImageUrl,Estoque)values('Jogo1','Descricao Jogo-1',150.00, 'images/jogo1.jpg',10);
+insert into Produto(Nome,Descricao,Preco,ImageUrl,Estoque)values('RRR','Roleta russa, remix',550.00, 'images/jogo2.jpg',100);
